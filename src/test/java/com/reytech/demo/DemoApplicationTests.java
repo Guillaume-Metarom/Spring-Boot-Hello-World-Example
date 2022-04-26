@@ -1,22 +1,28 @@
 package com.reytech.demo;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import com.reytech.demo.Personne;
 
-@SpringBootTest
-class DemoApplicationTests {
+public class Personne {
 
-	@Test
-	void contextLoads() {
-	}
-	
-	@Test
-        void groupedAssertions() {
-        Personne pers = new Personne("Nassur", "Moumadi");
+    public String firstName;
+    public String lastName;
 
-        assertAll("personne", () -> assertEquals("Nassur", pers.getFirstName()),
-                              () -> assertEquals("Moumadi", pers.getLastName()));
+    public Personne(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
