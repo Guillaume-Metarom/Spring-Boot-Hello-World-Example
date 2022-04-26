@@ -1,22 +1,13 @@
 package com.reytech.demo;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import com.reytech.demo.Personne;
 
-@SpringBootTest
-class DemoApplicationTests {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-	@Test
-	void contextLoads() {
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
 	}
-	
-	@Test
-        void groupedAssertions() {
-        Personne pers = new Personne("Nassur", "Moumadi");
 
-        assertAll("personne", () -> assertEquals("Nassur", pers.getFirstName()),
-                              () -> assertEquals("Moumadi", pers.getLastName()));
-    }
 }
